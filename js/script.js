@@ -48,6 +48,8 @@ $(document).ready(function(){
     });
 
 
+
+
     /*--------------- smooth scroll ---------------*/
 
     $('a.yakor').on('click', function (event) {
@@ -72,14 +74,14 @@ $(document).ready(function(){
       /*--------------- slick-slider ---------------*/
 
       
-$('.slider').slick({
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    adaptiveHeight: true,
-    autoplay: true,
-    autoplaySpeed: 3000
+  $('.slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      adaptiveHeight: true,
+      autoplay: true,
+      autoplaySpeed: 3000
   });
       
 });

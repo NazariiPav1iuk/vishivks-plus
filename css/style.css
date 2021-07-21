@@ -573,7 +573,8 @@ a {
   text-decoration: none;
 }
 
-img {
+img,
+picture {
   display: block;
   width: 100%;
 }
@@ -825,11 +826,11 @@ header .header__nav--active {
   margin-top: 30px;
 }
 
-.about .about__content article {
+.about .about__content .about__article {
   margin-bottom: 70px;
 }
 
-.about .about__content article p {
+.about .about__content .about__article p {
   font-family: "OpenSans";
   font-size: 16px;
   color: #717171;
@@ -837,7 +838,7 @@ header .header__nav--active {
   font-weight: 300;
 }
 
-.about .about__content article .about_img {
+.about .about__content .about__article .about_img {
   margin-top: 70px;
 }
 
@@ -941,11 +942,16 @@ header .header__nav--active {
   position: relative;
 }
 
+.card__inner {
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
 .card__inner:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
 }
 
 .card__inner img {
@@ -1013,10 +1019,21 @@ header .header__nav--active {
 .banner img {
   margin-top: 100px;
   max-height: 700px;
+  -webkit-transform: translate(0px, 120%);
+          transform: translate(0px, 120%);
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .banner a {
   color: #EF6465;
+}
+
+.js-banner.banner-acrive img {
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  opacity: 1;
 }
 
 /*--------------- description ---------------*/
@@ -1253,13 +1270,8 @@ footer .socials .twitter:hover {
   .container {
     padding: 0 60px;
   }
-  header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+  header .container {
+    padding: 20px 15px;
   }
   header .header__left .phone-number {
     display: none;
@@ -1300,7 +1312,7 @@ footer .socials .twitter:hover {
             transform: rotate(-45deg);
     position: absolute;
     top: 10px;
-    left: 115px;
+    left: 125px;
   }
   header .header__nav .nav__list .drop-down .dropp-down__menu {
     width: 220px;
@@ -1361,11 +1373,11 @@ footer .socials .twitter:hover {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .about .about__content article {
+  .about .about__content .about__article {
     width: 48%;
     margin: 0;
   }
-  .about .about__content article .skills {
+  .about .about__content .about__article .skills {
     margin-top: 50px;
   }
   .about .about__content .about__img {

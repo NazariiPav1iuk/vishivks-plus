@@ -19,7 +19,8 @@ body{
 a{
     text-decoration: none;
 }
-img{
+img,
+picture{
     display: block;
     width: 100%;
 }
@@ -240,7 +241,7 @@ header {
     background-color:$primary-black;
     .about__content {
         margin-top: 30px;
-        article{
+        .about__article{
             margin-bottom: 70px;
             p{
                 font-family: $OpenSans-font;
@@ -341,10 +342,11 @@ header {
     overflow:hidden;
     position: relative;
     &__inner {  
-        
+        //zoom
+        transition: transform .3s ease-in-out;
         &:hover{
             transform: scale(1.2);
-            transition: all .3s ease-in-out;
+            
         } 
 
         img{
@@ -409,10 +411,18 @@ header {
     img{
         margin-top: 100px;
         max-height: 700px;
+
+        transform: translate(0px, 120%);
+        opacity: 0;
+        transition: all 1s ease;
     }
     a{
         color:$primary-pink;
     }
+}
+.js-banner.banner-acrive img{
+    transform: translate(0px, 0px);
+    opacity:1;
 }
 
 /*--------------- description ---------------*/
@@ -619,8 +629,9 @@ footer{
         padding: 0 60px;
     }
     header {
-        display: flex;
-        justify-content: space-between;
+        .container{
+            padding: 20px 15px;
+        }
         .header__left{
             .phone-number{
                 display: none;
@@ -656,7 +667,7 @@ footer{
                             transform: rotate(-45deg);
                             position: absolute;
                             top: 10px;
-                            left: 115px;
+                            left: 125px;
                         }
                     }
                     .dropp-down__menu{
@@ -729,7 +740,7 @@ footer{
         .about__content {
             display: flex;
             justify-content: space-between;
-            article{
+            .about__article{
                 width: 48%;
                 margin: 0;
                 .skills {

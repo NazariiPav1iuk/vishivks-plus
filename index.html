@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -84,7 +84,7 @@
                         <h3>Наша компания предлагает услуги компьютерной вишивки или как называют- машинной вышивки.</h3>
                     </div>
                     <div class="about__content">
-                        <article>
+                        <div class="about__article">
                             <p>Нанесение изображения производится с помощью высокоточного компьютеризированного вышивального оборудования и специальных нитей. Такой способ нанесения хорошо подойдет для нанесения фирменной символики, различных логотипов, шевронов как на готовую продукцию так и на элементы кроя или просто ткань. ВИШИВКА выглядит солидно, престижно, дорого и, кроме того, это отличное декоративное решение. Изображение получается текстурированным и объемным. про долговечность даного нанесение можно не переживать- это навсегда, быстрее износится вещ чем испортится вышивка на ней! Технологически размеры вышивки предоставляем до 40см на 60см. до 12 цветов, с возможностью вышить металлизированными нитями как серебро, золото.</p>
                             <div class="skills">
                                 <div class="skills__item">
@@ -112,9 +112,13 @@
                                     </span>
                                 </div>
                             </div>
-                        </article>
+                        </div>
                         <div class="about__img">
-                            <img src="img/vyshivky/Mashinnaya-vyshivka.jpg" alt="Машинна вишивка">
+                            <picture>
+                                <source src="img/vyshivky/Mashinnaya-vyshivka.webp" type="image/webp">
+                                <img src="img/vyshivky/Mashinnaya-vyshivka.jpg" alt="Машинна вишивка">
+                            </picture>
+                            
                         </div>
                         
                     </div>
@@ -128,7 +132,10 @@
                     <div class="card">
                         <a href="pages/vyshivka-na-kroe.html">
                             <div class="card__inner">
-                                <img src="img/vyshivky/vyshivka-22.jpg" alt="Вышивка На Крое">
+                                <picture>
+                                    <source srcset="img//vyshivky/vyshivka-22.webp" type="image/webp">
+                                    <img src="img/vyshivky/vyshivka-22.jpg" alt="Вышивка На Крое">
+                                </picture>   
                             </div>
                             <div class="card__subscribe">Вышивка На Крое</div>
                         </a>
@@ -137,7 +144,10 @@
                     <div class="card">
                         <a href="pages/poshtuchnye-zakazy.html">
                             <div class="card__inner">
-                                <img src="img/vyshivky/vyshivka-1.jpg" alt="Поштучные заказы">
+                                <picture>
+                                    <source srcset="img/vyshivky/vyshivka-1.webp" type="image/webp">
+                                    <img src="img/vyshivky/vyshivka-1.jpg" alt="Поштучные заказы">
+                                </picture>  
                             </div>
                             <div class="card__subscribe">Поштучные заказы</div>
                         </a>
@@ -146,7 +156,10 @@
                     <div class="card">
                         <a href="pages/vyshivka-shevronow.html">
                             <div class="card__inner">
-                                <img src="img/vyshivky/vyshivka-10.jpg" alt="Вышивка Шевронов">
+                                <picture>
+                                    <source srcset="img/vyshivky/vyshivka-10.webp" type="image/webp">
+                                    <img src="img/vyshivky/vyshivka-10.jpg" alt="Вышивка Шевронов">
+                                </picture>  
                             </div>
                             <div class="card__subscribe">Вышивка Шевронов</div>
                         </a>
@@ -155,7 +168,10 @@
                     <div class="card">
                         <a href="pages/vyshivka-na-gotovyh-izdelijah.html">
                             <div class="card__inner">
-                                <img src="img/vyshivky/vyshivka-8.jpg" alt="Вышивка на готовых изделиях">
+                                <picture>
+                                    <source srcset="img/vyshivky/vyshivka-8.webp" type="image/webp">
+                                    <img src="img/vyshivky/vyshivka-8.jpg" alt="Вышивка на готовых изделиях">
+                                </picture>  
                             </div>
                             <div class="card__subscribe">Вышивка на готовых изделиях</div>
                         </a>
@@ -245,7 +261,13 @@
                             <a href="tel:0986157479">0986157479</a>.
                         </h3>
                     </div>
-                    <img src="img/vyshivky/vyshivka-17.jpg" alt="Наш швейный цех">
+                    <div class="js-banner">
+                       <picture>
+                           <source srcset="img/vyshivky/vyshivka-17.webp" type="image/webp">
+                            <img src="img/vyshivky/vyshivka-17.jpg" alt="Наш швейный цех">      
+                       </picture>
+                    </div>
+                    
                 </div>
             </section>
 
@@ -254,6 +276,7 @@
             <section class="description">
                 <div class="container">
                     <article>
+                        <h2 class="none">статья без заголовка</h2>
                         <p>Одним из древнейших способов украшения различных предметов считается ручная </p>
                         <p>Преемницей ручного метода стала вышивка на машинке  и на компьютере. 
                             Благодаря ей можно быстро и качественно создавать красивые и сложные 
@@ -405,6 +428,7 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/slick.min.js"></script>
     <!-- JS -->
     <script src="js/scroll-animation.js"></script>
     <script src="js/script.js"></script>
