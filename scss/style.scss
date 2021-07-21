@@ -355,7 +355,6 @@ header {
             max-height: 500px;
         }
     }
-
     &__subscribe {
         width: 100%;
         background-color:$primary-pink;
@@ -363,7 +362,7 @@ header {
         font-size: 20px;
         text-transform: uppercase;
         text-align: center;
-        padding: 15px 18px;
+        padding: 25px 18px;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -386,10 +385,11 @@ header {
             .icon{
                 width: 50px;
                 height: 50px;
-                fill: $primary-white;
+                fill: $grey-icons-color;
                 display: block;
                 margin:  0 auto;
             }
+            
             h4{
                font-size: 20px;
                margin-top: $f-size-medium;
