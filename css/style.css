@@ -35,6 +35,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-Light.woff") format("woff"), url("../fonts/OpenSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans-SemiBold.woff") format("woff"), url("../fonts/OpenSans-SemiBold.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
 /*--------------- colors ---------------*/
 /*--------------- fonts-sizes ---------------*/
 .order .container .block-title h3, .order .container .block-title h2 {
@@ -344,6 +358,7 @@
 }
 
 .table .container .grid .table__item p {
+  font-family: "OpenSans";
   font-size: 13px;
   font-weight: 300;
   color: #000;
@@ -370,9 +385,9 @@
 }
 
 .table .container .grid .column-title p {
-  font-family: 'OpenSans';
-  font-size: 15px;
-  font-weight: 700;
+  font-family: "OpenSans";
+  font-size: 13px;
+  font-weight: 500;
   color: #000;
 }
 
@@ -448,7 +463,7 @@
   }
   .box .container .slider {
     width: 60%;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     height: 100%;
   }
@@ -550,7 +565,7 @@ body {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'SourceSansPro';
+  font-family: "SourceSansPro";
   font-weight: 300;
 }
 
@@ -707,7 +722,7 @@ header .header__nav .nav__list .dropp-down__menu {
 header .header__nav .nav__list a {
   display: block;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
   padding: 10px 15px;
 }
@@ -815,10 +830,11 @@ header .header__nav--active {
 }
 
 .about .about__content article p {
+  font-family: "OpenSans";
   font-size: 16px;
   color: #717171;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .about .about__content article .about_img {
@@ -835,7 +851,7 @@ header .header__nav--active {
 
 .about .about__content .skills p {
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   color: #fff;
   margin-bottom: 8px;
@@ -1016,22 +1032,43 @@ header .header__nav--active {
 }
 
 .description p {
-  font-family: 'OpenSans';
+  font-family: "OpenSans";
   font-size: 13px;
   line-height: 24px;
   color: #717171;
+  font-weight: 300;
   margin-bottom: 30px;
 }
 
 .description p span {
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 14px;
 }
 
-.description li {
+.description ul {
+  list-style: none;
+}
+
+.description ul li {
+  color: #222;
   margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.description li p {
+.description ul li::before {
+  content: "\2022";
+  color: #717171;
+  font-weight: bold;
+  display: block;
+  width: 10px;
+  margin-top: 2px;
+  margin-left: -20px;
+  margin-right: 10px;
+}
+
+.description ul li p {
   margin-bottom: 10px;
 }
 
@@ -1286,7 +1323,7 @@ footer .socials .twitter:hover {
   header .header__nav .nav__list a {
     display: block;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.7);
     padding: 10px 15px;
   }

@@ -12,7 +12,7 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'SourceSansPro';
+    font-family: $SourceSansPro-font;
     font-weight: 300;
 }
 
@@ -142,7 +142,7 @@ header {
             a{
                 display: block;
                 text-transform: uppercase;
-                font-size: 15px;
+                font-size: $f-size-little;
                 color:rgba($primary-white, .7);
                 padding: 10px 15px;
                 &:last-child{
@@ -172,7 +172,7 @@ header {
 }
 
 .phone-number{
-    font-size: 25px;
+    font-size: $f-size-medium;
     color: $primary-pink;
     margin-left: 30px;
 }
@@ -206,7 +206,7 @@ header {
         max-width: 890px;
         z-index: 3;
         h1{
-            font-size: 25px;
+            font-size: $f-size-medium;
             padding: 10px;
             line-height: 40px;
             font-weight: 300;
@@ -218,7 +218,7 @@ header {
             padding: 15px 30px;
             border: 2px solid $primary-black;
             text-transform: uppercase;
-            font-size: 13px;
+            font-size: $f-size-min;
             color: $primary-black;
             z-index: 3;
 
@@ -243,10 +243,11 @@ header {
         article{
             margin-bottom: 70px;
             p{
-                font-size: 16px;
+                font-family: $OpenSans-font;
+                font-size: $f-size-little;
                 color:#717171;
                 line-height: 24px;
-                font-weight: 400;
+                font-weight: 300;
             }
             .about_img{
                 margin-top: 70px;
@@ -259,7 +260,7 @@ header {
             }
             p{
                 text-transform: uppercase;
-                font-size: 14px;
+                font-size: $f-size-little;
                 line-height: 20px;
                 color:$primary-white;
                 margin-bottom: 8px;
@@ -312,12 +313,12 @@ header {
 .block-title{
     h2{
         color:$primary-white;
-        font-size: 42px;
+        font-size: $f-size-big;
         font-weight:300;
     }
     h3{
         color:$primary-white;
-        font-size: 25px;
+        font-size:$f-size-medium;
         font-weight:300;
         margin-top: 25px;
         line-height: 38px;
@@ -389,11 +390,11 @@ header {
             }
             h4{
                font-size: 20px;
-               margin-top: 25px;
+               margin-top: $f-size-medium;
             }
             p{
                 margin-top: 15px;
-                font-size: 13px;
+                font-size: $f-size-min;
                 line-height: 24px;
             }
         }
@@ -425,21 +426,39 @@ header {
         margin-bottom: 20px;
     }
     p{
-        font-family: 'OpenSans';
-        font-size: 13px;
+        font-family: $OpenSans-font;
+        font-size: $f-size-min;
         line-height: 24px;
         color:$secondary-grey;
+        font-weight: 300;
         margin-bottom: 30px;
         span{
-            font-weight: 700;
+            font-weight: 500;
+            font-size: $f-size-modify;
         }
     }
-    li{
-        margin-left: 20px;
-        p{
-            margin-bottom: 10px;
+    ul{
+        list-style: none;
+        li{
+            color:$secondary-black;
+            margin-left: 20px;
+            display: flex;
+            &::before{
+                content: "\2022"; 
+                color: $secondary-grey;
+                font-weight: bold; 
+                display: block; 
+                width:10px;
+                margin-top: 2px;
+                margin-left: -20px;
+                margin-right: 10px;
+            }
+            p{
+                margin-bottom: 10px;  
+            }
         }
     }
+    
 }
 
 /*--------------- footer ---------------*/
@@ -462,16 +481,16 @@ footer{
         text-align: center;
         span{
             font-family: 'OpenSans';
-            font-size: 16px;
+            font-size: $f-size-little;
         }
         p{
             margin-top: 10px;
-            font-size: 13px;
+            font-size: $f-size-min;
         }
     }
     .contacts{
         margin-top: 30px;
-        font-size: 16px;
+        font-size: $f-size-little;
         a{
             margin-bottom: 10px;
             display: block;
@@ -663,7 +682,7 @@ footer{
                 a{
                     display: block;
                     text-transform: uppercase;
-                    font-size: 15px;
+                    font-size: $f-size-little;
                     color:rgba($primary-white, .7);
                     padding: 10px 15px;
                     &:last-child{
@@ -689,7 +708,7 @@ footer{
     .intro{
         .intro__content{
             h1{
-                font-size: 42px;
+                font-size: $f-size-big;
                 line-height: 60px;
             }
         }
