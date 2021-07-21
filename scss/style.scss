@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&=swap');
 @import '_font';
 @import '_vars';
+@import '_order-page';
+@import '_vishivka-shevronow';
 
 /*--------------- general ---------------*/
 *,
@@ -20,6 +22,10 @@ a{
 img{
     display: block;
     width: 100%;
+}
+input, 
+textarea{
+    outline: none;
 }
 
 /*--------------- index ---------------*/
@@ -50,6 +56,11 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
+    position: relative;
+    .header__left{
+        display: flex;
+        align-items: center;
+    }
 
     .nav-toggle{
         span{
@@ -59,9 +70,53 @@ header {
             height: 2px;
             background-color: $primary-white;
             margin: 4px 0;
+            transition: all .3s linear;
         }
     }
+    .nav-toggle--active{
+
+        span:nth-child(1){
+            transform: rotate(45deg) translateY(4px);
+        }
+        span:nth-child(2){
+            display: none;
+        }
+        span:nth-child(3){
+            transform: rotate(-45deg) translateY(-4px);
+        }
+    }
+   
+    
+    .header__nav{
+        background-color:$primary-black;
+        position: absolute;
+        z-index: 5;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        display: none;
+        a{
+            display: block;
+            text-transform: uppercase;
+            font-size: 15px;
+            color:rgba($primary-white, .7);
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba($primary-white, .5);
+            letter-spacing: 1px;
+            &:last-child{
+                border-bottom:none;
+            }
+            &:hover{
+                cursor: pointer;
+                color:$primary-pink;
+            }
+        }
+    }
+    .header__nav--active{
+        display: block;
+    }
 }
+
     
 .logo{
     width: 118px;
@@ -71,6 +126,7 @@ header {
 .phone-number{
     font-size: 25px;
     color: $primary-pink;
+    margin-left: 30px;
 }
 
 /*--------------- intro  ---------------*/
@@ -106,11 +162,11 @@ header {
             padding: 10px;
             line-height: 40px;
             font-weight: 300;
-            background-color:rgba(255,255,255,0.5);
+            background-color:rgba($primary-white, 0.4);
             margin-bottom: 30px;
         }
         a{
-            background-color: rgba(255,255,255,0.52);
+            background-color: rgba($primary-white, 0.42);
             padding: 15px 30px;
             border: 2px solid $primary-black;
             text-transform: uppercase;
@@ -165,10 +221,10 @@ header {
                 display: block;
                 height: 15px;
                 width: 100%;
-                background-color: rgba(255,255,255,.2);
+                background-color: rgba($primary-white, .2);
                 position: relative;
                 margin-bottom: 20px;
-                &::after{
+                .js-bar{
                     content: '';
                     display: block;
                     height: 15px;
@@ -177,10 +233,33 @@ header {
                     top: 0;
                     left: 0;
                 }
+                .bar1{
+                    width: 95%;
+                }
+                .bar2{
+                    width: 90%;
+                }
+                .bar3{
+                    width: 85%;
+                }
+                .bar4{
+                    width: 95%;
+                }
             }    
         }
     }    
 }
+
+// animation
+@keyframes bar-grow{
+    0% {
+        width: 0%;
+    }
+    100% {
+        max-width: 100%;
+    }
+}
+
 // block-tittle
 .block-title{
     h2{
@@ -198,18 +277,6 @@ header {
 }
 
 // bars
-.bar1::after{
-    width: 95%;
-}
-.bar2::after{
-    width: 90%;
-}
-.bar3::after{
-    width: 85%;
-}
-.bar4::after{
-    width: 95%;
-}
 /*--------------- services ---------------*/
 
 .services {
@@ -227,9 +294,10 @@ header {
     &__inner {  
         
         &:hover{
-            transform: scale(1.1);
-            transition: all .2s linear;
+            transform: scale(1.2);
+            transition: all .3s ease-in-out;
         } 
+
         img{
             width: 100%;
             height: 100%;
@@ -283,6 +351,7 @@ header {
     } 
 }
 
+
 /*--------------- section ---------------*/
 .banner{
     padding-top: 30px;
@@ -321,7 +390,6 @@ header {
             margin-bottom: 10px;
         }
     }
-  
 }
 
 /*--------------- footer ---------------*/
@@ -405,6 +473,36 @@ footer{
         }
 
     }
+}
+// up-btn
+.up-btn{
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-color:rgba($secondary-pink, .8);
+    position: fixed;
+    right:15px;
+    bottom: 15px;
+    z-index: 3;
+    display: none;
+    span{
+        width: 15px;
+        height: 15px;
+        display: block;
+        border-left: 1px solid $primary-white;
+        border-top: 1px solid $primary-white;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 40%;
+        left: 31%;
+    }
+    &:hover{
+        background-color:rgba($secondary-pink, 1);
+        cursor: pointer;
+    }
+}
+.up-btn--active{
+    display: block;
 }
 
 /*--------------- media ---------------*/
@@ -516,12 +614,6 @@ footer{
                     margin-right: 50px;
                 }  
             }
-            .socials{
-                .icon{
-                    margin: 10px 10px;
-                }
-            }
-        }
-        
+        }     
     }
 }
