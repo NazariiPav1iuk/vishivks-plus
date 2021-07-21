@@ -19,7 +19,7 @@
     }
     .slick-arrow{
         position: absolute;
-        top: 50%;
+        top: calc(50% - 22.5px);
         font-size: 0;
         z-index: 3;
         display: block;

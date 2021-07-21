@@ -6,10 +6,15 @@ $(document).ready(function(){
     let navToggleMenu = $(".header__nav"); 
     let navToggle = $(".nav-toggle");
     let logo = $('.logo');
+    let dropBtn = $('.drop-down');
+    let dropDownMenu = $('.dropp-down__menu');
 
     navToggle.click(function() {
         navToggleMenu.slideToggle(200).toggleClass('header__nav--active');
         navToggle.toggleClass('nav-toggle--active');
+        dropDownMenu.removeClass('drop-down--active');
+        dropBtn.removeClass('icon--active');
+        dropDownMenu.css("display", "");   
     });
 
     // close nav-togle on click outside
@@ -19,8 +24,16 @@ $(document).ready(function(){
         ! logo.is(e.target) && logo.has(e.target).length === 0 ) {
             navToggleMenu.removeClass('header__nav--active');
             navToggle.removeClass('nav-toggle--active');
+            dropDownMenu.removeClass('drop-down--active');
+            dropBtn.removeClass('icon--active');
+            dropDownMenu.css("display", "");   
             navToggleMenu.css("display", "");     
         }
+    });
+
+    dropBtn.on('click', function(){
+      dropDownMenu.slideToggle(200).toggleClass('drop-down--active');
+      dropBtn.toggleClass('icon--active');
     });
 
     /*--------------- up-btn ---------------*/

@@ -51,12 +51,19 @@ textarea{
 }
 
 header {
-    background-color: $primary-black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    position: relative;
+    background:url('../img/header-back.jpg');
+    background-size:cover;
+        background-repeat:no-repeat;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding-top: 20px;
+        padding-bottom: 20px;
+            
+    }
     .header__left{
         display: flex;
         align-items: center;
@@ -91,30 +98,71 @@ header {
         background-color:$primary-black;
         position: absolute;
         z-index: 5;
-        top: 70px;
+        top: 90px;
         right: 0;
         width: 100%;
         display: none;
-        a{
-            display: block;
-            text-transform: uppercase;
-            font-size: 15px;
-            color:rgba($primary-white, .7);
-            padding: 10px 15px;
-            border-bottom: 1px solid rgba($primary-white, .5);
-            letter-spacing: 1px;
-            &:last-child{
-                border-bottom:none;
+        .nav__list{
+            .drop-down{
+                position: relative;
+                .arrow-icon{
+                    margin-left: 0;
+                    &::after{
+                        content: '';
+                        width: 10px;
+                        height: 10px;
+                        display:block;
+                        border-left: 2px solid $secondary-grey;
+                        border-bottom: 2px solid  $secondary-grey;
+                        transform: rotate(-45deg);
+                        position: absolute;
+                        top: 10px;
+                        left: 130px;
+                    }
+                    &:hover{
+                        &::after{
+                            border-color: $primary-pink;
+                        }
+                    }
+                }
+               
+                a{
+                    margin-left: 30px;
+
+                }
             }
-            &:hover{
-                cursor: pointer;
-                color:$primary-pink;
+            .icon--active .arrow-icon::after{
+                transform: rotate(135deg);
+                top: 15px;
             }
+
+            .dropp-down__menu{
+                display: none;
+            }
+            a{
+                display: block;
+                text-transform: uppercase;
+                font-size: 15px;
+                color:rgba($primary-white, .7);
+                padding: 10px 15px;
+                &:last-child{
+                    border-bottom:none;
+                }
+                &:hover{
+                    cursor: pointer;
+                    color:$primary-pink;
+                }
+                
+            }
+
         }
+       
     }
+    .dropp-down--active,
     .header__nav--active{
         display: block;
     }
+    
 }
 
     
@@ -301,6 +349,7 @@ header {
         img{
             width: 100%;
             height: 100%;
+            max-height: 500px;
         }
     }
 
@@ -358,6 +407,7 @@ header {
     background-color:$primary-black;
     img{
         margin-top: 100px;
+        max-height: 700px;
     }
     a{
         color:$primary-pink;
@@ -506,6 +556,7 @@ footer{
 }
 
 /*--------------- media ---------------*/
+
 @media (min-width: 480px) {
     .container{
         padding: 0 30px;
@@ -548,6 +599,93 @@ footer{
     .container{
         padding: 0 60px;
     }
+    header {
+        display: flex;
+        justify-content: space-between;
+        .header__left{
+            .phone-number{
+                display: none;
+            }
+        }
+    
+        .nav-toggle{
+           display: none;
+        }
+
+        .header__nav{
+            background-color:transparent;
+            position: static;
+            width:max-content;
+            display: block;
+
+            .nav__list{
+                display: flex;
+                li{
+                    list-style: none;
+                }
+                .drop-down{
+                    margin-right: 20px;
+                    .arrow-icon{
+                        margin-left: 0;
+                        &::after{
+                            content: '';
+                            width: 10px;
+                            height: 10px;
+                            display:block;
+                            border-left: 2px solid $secondary-grey;
+                            border-bottom: 2px solid  $secondary-grey;
+                            transform: rotate(-45deg);
+                            position: absolute;
+                            top: 10px;
+                            left: 115px;
+                        }
+                    }
+                    .dropp-down__menu{
+                        width:220px;
+                        position: absolute;
+                        top: 63px;
+                        left: 0;
+                        background-color:$primary-black;
+                        a{
+                            margin-left: 0;
+                        }
+                    }
+
+                }
+                .icon--active .arrow-icon::after{
+                    transform: rotate(135deg);
+                    top: 15px;
+                }
+    
+                .dropp-down__menu{
+                    display: none;
+                }
+                a{
+                    display: block;
+                    text-transform: uppercase;
+                    font-size: 15px;
+                    color:rgba($primary-white, .7);
+                    padding: 10px 15px;
+                    &:last-child{
+                        border-bottom:none;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                        color:$primary-pink;
+                    }
+                    
+                }
+    
+            }
+           
+        }
+        .dropp-down--active,
+        .header__nav--active{
+            display: block;
+        }
+        
+    }
+
     .intro{
         .intro__content{
             h1{
