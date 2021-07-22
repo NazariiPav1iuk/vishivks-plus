@@ -254,8 +254,8 @@
 .slider .slick-prev {
   left: 0px;
   background: url("../img/next.svg") 0 0/30% no-repeat rgba(0, 0, 0, 0.3);
-  -webkit-transform: rotate(180deg) translateY(40%);
-          transform: rotate(180deg) translateY(40%);
+  -webkit-transform: rotate(180deg) translateY(41%);
+          transform: rotate(180deg) translateY(41%);
   background-position: center;
   width: 10px;
   height: 10px;
@@ -753,15 +753,15 @@ header .header__nav--active {
 }
 
 .phone-number {
-  font-size: 25px;
+  font-size: 24px;
   color: #EF6465;
-  margin-left: 30px;
+  margin-left: 10px;
 }
 
 /*--------------- intro  ---------------*/
 .intro {
   background-image: url("../img/main-bg.jpg");
-  height: calc(100vh - 70px);
+  height: calc(100vh - 90px);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -821,10 +821,13 @@ header .header__nav--active {
   cursor: pointer;
 }
 
+.wrapper-background-black {
+  background-color: #000;
+}
+
 /*--------------- about ---------------*/
 .about {
   padding: 75px 0;
-  background-color: #000;
 }
 
 .about .about__content {
@@ -953,10 +956,6 @@ header .header__nav--active {
 }
 
 /*--------------- services ---------------*/
-.services {
-  background-color: #000;
-}
-
 .services .container {
   padding: 0;
 }
@@ -1010,7 +1009,6 @@ header .header__nav--active {
 
 /*--------------- terms ---------------*/
 .terms {
-  background-color: #000;
   padding-top: 40px;
 }
 
@@ -1047,7 +1045,6 @@ header .header__nav--active {
 /*--------------- section ---------------*/
 .banner {
   padding-top: 30px;
-  background-color: #000;
 }
 
 .banner img {

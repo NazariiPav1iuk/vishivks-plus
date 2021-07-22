@@ -3,7 +3,7 @@
 @import '_font';
 @import '_vars';
 @import '_order-page';
-@import '_vishivka-shevronow';
+@import '_uslugi';
 
 /*--------------- general ---------------*/
 *,
@@ -28,6 +28,7 @@ input,
 textarea{
     outline: none;
 }
+
 
 /*--------------- index ---------------*/
 .none{
@@ -54,7 +55,7 @@ textarea{
 header {
     background:url('../img/header-back.jpg');
     background-size:cover;
-        background-repeat:no-repeat;
+    background-repeat:no-repeat;
 
     .container{
         display: flex;
@@ -62,14 +63,12 @@ header {
         align-items: center;
         position: relative;
         padding-top: 20px;
-        padding-bottom: 20px;
-            
+        padding-bottom: 20px; 
     }
     .header__left{
         display: flex;
         align-items: center;
     }
-
     .nav-toggle{
         span{
             content: "";
@@ -173,9 +172,9 @@ header {
 }
 
 .phone-number{
-    font-size: $f-size-medium;
+    font-size: 24px;
     color: $primary-pink;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 /*--------------- intro  ---------------*/
@@ -183,7 +182,7 @@ header {
 
 .intro {
     background-image: url('../img/main-bg.jpg');
-    height: calc(100vh - 70px);
+    height: calc(100vh - 90px);
     background-attachment: fixed;
     background-size: cover;
     background-repeat:no-repeat;
@@ -233,12 +232,15 @@ header {
     }
 }
 
+.wrapper-background-black{
+    background-color:$primary-black;
+}
+
 /*--------------- about ---------------*/
 
 
 .about {
     padding: 75px 0;
-    background-color:$primary-black;
     .about__content {
         margin-top: 30px;
         .about__article{
@@ -341,7 +343,6 @@ header {
 /*--------------- services ---------------*/
 
 .services {
-    background-color:$primary-black;
    .container{
        padding: 0;
    }
@@ -387,7 +388,6 @@ header {
 /*--------------- terms ---------------*/
 
 .terms{
-    background-color:$primary-black;
     padding-top: 40px;
     &__inner {
         margin-top: 50px;
@@ -421,7 +421,6 @@ header {
 /*--------------- section ---------------*/
 .banner{
     padding-top: 30px;
-    background-color:$primary-black;
     img{
         margin-top: 100px;
         max-height: 700px;
