@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-    let bar = $('.js-bar');
-    let barActive = 'bar-active';
+    let banner = $('.js-banner');
+    let bannerActive = 'banner-active';
    
     $(window).scroll(function(){
         function Animate(el, adEl){
@@ -13,12 +13,8 @@ $(document).ready(function(){
             } 
         };
     
-        // Animate(banner, bannerActive);
-        Animate(bar, barActive);
-    
+        Animate(banner, bannerActive);
+
     });
     
 });
-
-
-
