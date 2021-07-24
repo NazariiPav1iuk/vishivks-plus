@@ -7,14 +7,12 @@ $(document).ready(function(){
     let navToggle = $(".nav-toggle");
     let logo = $('.logo');
     let dropBtn = $('.drop-down');
-    let dropDownMenu = $('.dropp-down__menu');
+    let dropDownMenu = $('.drop-down__menu');
+    let arrowIcon = $('.arrow-icon');
 
     navToggle.click(function() {
         navToggleMenu.slideToggle(200).toggleClass('header__nav--active');
         navToggle.toggleClass('nav-toggle--active');
-        dropDownMenu.removeClass('drop-down--active');
-        dropBtn.removeClass('icon--active');
-        dropDownMenu.css("display", "");   
     });
 
     // close nav-togle on click outside
@@ -26,15 +24,26 @@ $(document).ready(function(){
             navToggle.removeClass('nav-toggle--active');
             dropDownMenu.removeClass('drop-down--active');
             dropBtn.removeClass('icon--active');
-            dropDownMenu.css("display", "");   
-            navToggleMenu.css("display", "");     
+            arrowIcon.removeClass('icon--active');   
         }
     });
 
-    dropBtn.on('click', function(){
-      dropDownMenu.slideToggle(200).toggleClass('drop-down--active');
-      dropBtn.toggleClass('icon--active');
-    });
+   // drop-down on diferent screens
+    if($(window).width() >= '768'){
+      dropBtn.hover(dropDown, dropDownHide);
+    }  else {
+      dropBtn.click(dropDown);
+    }
+
+    function dropDownHide(){
+      dropDownMenu.slideToggle(200).removeClass('drop-down--active');
+      arrowIcon.removeClass('icon--active');
+    }
+
+    function dropDown(){
+      dropDownMenu.slideToggle(200).addClass('drop-down--active');
+      arrowIcon.addClass('icon--active');
+    }
 
     /*--------------- up-btn ---------------*/
 

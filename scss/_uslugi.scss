@@ -115,12 +115,13 @@
 /*--------------- callback ---------------*/
 
 .callback {
-	padding-bottom: 100px;
+	padding-bottom: 20px;
 	h3 {
 		font-size: $f-size-medium;
 		letter-spacing: 1px;
 		color: $secondary-black;
 		margin-bottom: 20px;
+		text-align: center;
 	}
 }
 
@@ -238,8 +239,13 @@
 	}
 	.callback {
 		.container {
+			h3{
+				text-align: center;
+				font-weight: 500;
+			}
 			.form {
-				max-width: 251px;
+				margin: 0 auto;
+				max-width: 500px;
 			}
 		}
 	}

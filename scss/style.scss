@@ -98,87 +98,107 @@ header {
         background-color:$primary-black;
         position: absolute;
         z-index: 5;
-        top: 90px;
+        top: 70px;
         right: 0;
         width: 100%;
         display: none;
+        padding: 20px 15px;
         .nav__list{
             .drop-down{
-                position: relative;
-                .arrow-icon{
-                    margin-left: 0;
-                    &::after{
-                        content: '';
-                        width: 10px;
-                        height: 10px;
-                        display:block;
-                        border-left: 2px solid $secondary-grey;
-                        border-bottom: 2px solid  $secondary-grey;
-                        transform: rotate(-45deg);
+                .drop-down__trigger{
+                    position: relative;
+                    .arrow-icon{
+                        display: block;
+                        width: 0;
+                        height: 0;
+                        margin: 0px 0px 0px 5px;
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-top: 5px solid $secondary-grey;
+                        transition: transform .3s linear;
                         position: absolute;
-                        top: 10px;
-                        left: 130px;
+                        top: 45%;
+                        right:-5px;
                     }
-                    &:hover{
-                        &::after{
-                            border-color: $primary-pink;
-                        }
+                    .icon--active{
+                        transform: rotate(180deg);
                     }
                 }
-               
                 a{
-                    margin-left: 30px;
-
+                    &:hover .arrow-icon{
+                        border-top: 5px solid $primary-pink;
+                    }
                 }
             }
-            .icon--active .arrow-icon::after{
-                transform: rotate(135deg);
-                top: 15px;
-            }
-
-            .dropp-down__menu{
+            .drop-down__menu{
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                height: 0;
                 display: none;
+                li{
+                    margin-left: 20px;
+                }
             }
+            
             a{
                 display: block;
                 text-transform: uppercase;
                 font-size: $f-size-little;
                 color:rgba($primary-white, .7);
                 padding: 10px 15px;
-                &:last-child{
-                    border-bottom:none;
-                }
                 &:hover{
                     cursor: pointer;
                     color:$primary-pink;
                 }
                 
             }
+            .drop-down--active{
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+                height: auto;
+            }
 
         }
        
     }
-    .dropp-down--active,
     .header__nav--active{
         display: block;
+    }  
+}
+
+.logo{
+    width: 80px;
+    height:auto;
+}
+
+.phone-number--mobile{
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 20px;
+    color:$secondary-grey;
+    margin-left: 10px;
+    .icon{
+        width:15px;
+        height: 15px;
+        fill: $secondary-grey;
+        margin: 2px 5px 0 0;
     }
     
+    &:hover .icon{
+        fill: $primary-pink;
+    }
+    &:hover{
+        color:$primary-pink;
+    }
 }
-
-    
-.logo{
-    width: 118px;
-    height:50px;
-}
-
-.phone-number{
-    font-size: 24px;
-    color: $primary-pink;
-    margin-left: 10px;
+.phone-number--desktop{
+    display: none;
 }
 
 /*--------------- intro  ---------------*/
-
 
 .intro {
     background-image: url('../img/main-bg.jpg');
@@ -192,16 +212,7 @@ header {
     align-items: center;
     position: relative;
     padding: 0 15px;
-    
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,.3);
-        z-index: 1;
-    }
+ 
     .intro__content{
         max-width: 890px;
         z-index: 3;
@@ -248,9 +259,9 @@ header {
             p{
                 font-family: $OpenSans-font;
                 font-size: $f-size-little;
-                color:#717171;
+                color:$secondary-grey;
                 line-height: 24px;
-                font-weight: 300;
+                font-weight: 400;
             }
             .about_img{
                 margin-top: 70px;
@@ -263,7 +274,7 @@ header {
             }
             p{
                 text-transform: uppercase;
-                font-size: $f-size-little;
+                font-size: $f-size-modify;
                 line-height: 20px;
                 color:$primary-white;
                 margin-bottom: 8px;
@@ -327,19 +338,18 @@ header {
 .block-title{
     h2{
         color:$primary-white;
-        font-size: $f-size-big;
+        font-size: 30px;
         font-weight:300;
     }
     h3{
         color:$primary-white;
-        font-size:$f-size-medium;
+        font-size:18px;
         font-weight:300;
         margin-top: 25px;
-        line-height: 38px;
+        line-height: 25px;
     }
 }
 
-// bars
 /*--------------- services ---------------*/
 
 .services {
@@ -349,8 +359,8 @@ header {
 }
 
 .card {
-    width: 100%;
-    border: 2px solid $primary-white;
+    width: 98%;
+    margin: 1% auto;
     overflow:hidden;
     position: relative;
     &__inner {  
@@ -359,8 +369,9 @@ header {
         height: 100%;
         max-height: 450px;
         transition: transform .3s ease-in-out;
+        transform: scale(1.2);
         &:hover{
-            transform: scale(1.2);
+            transform: scale(1);
             
         } 
         img{
@@ -410,21 +421,18 @@ header {
             }
             p{
                 margin-top: 15px;
-                font-size: $f-size-min;
+                font-size: $f-size-little;
                 line-height: 24px;
             }
         }
     } 
 }
 
+/*--------------- banner ---------------*/
 
-/*--------------- section ---------------*/
 .banner{
-    padding-top: 30px;
     img{
-        margin-top: 100px;
         max-height: 700px;
-
         transform: translate(0px, 120%);
         opacity: 0;
         transition: all 1s ease;
@@ -434,27 +442,27 @@ header {
     }
 }
 .js-banner.banner-active img{
-    transform: translate(0px, 0px);
+    transform: translate(0px, 15%);
     opacity:1;
 }
 
 /*--------------- description ---------------*/
 
 .description{
-    padding-top: 50px;
+    margin-top: 50px;
     h2{
-        font-size: 42px;
-        line-height: 63px;
+        font-size: 30px;
+        line-height: 35px;
         color:$secondary-black;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     p{
         font-family: $OpenSans-font;
         font-size: $f-size-min;
-        line-height: 24px;
+        line-height: 18px;
         color:$secondary-grey;
         font-weight: 300;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         span{
             font-weight: 500;
             font-size: $f-size-modify;
@@ -472,7 +480,7 @@ header {
                 font-weight: bold; 
                 display: block; 
                 width:10px;
-                margin-top: 2px;
+                margin-top: -2px;
                 margin-left: -20px;
                 margin-right: 10px;
             }
@@ -502,14 +510,10 @@ footer{
     }
     .copiryght{
         text-align: center;
-        span{
-            font-family: 'OpenSans';
-            font-size: $f-size-little;
-        }
-        p{
-            margin-top: 10px;
-            font-size: $f-size-min;
-        }
+       .logo{
+           margin:  0 auto;
+           width: 118px;
+       }
     }
     .contacts{
         margin-top: 30px;
@@ -603,6 +607,7 @@ footer{
     .container{
         padding: 0 30px;
     }
+
     .terms{
         &__inner {
             display: grid;
@@ -619,9 +624,13 @@ footer{
     }
 
     footer{
+        border-top:1px solid rgba($primary-white, .2);
         .container{
             display: flex;
             justify-content: space-between;
+            .logo{
+                margin-left: 0;
+            }
             .footer-nav{
                 margin-top: 0;
                 text-align: left;
@@ -637,6 +646,11 @@ footer{
      
     }
 }
+@media (min-width: 890px) {
+    .phone-number--desktop{
+        display: flex;
+    }
+}
 @media (min-width: 768px ) {
     .container{
         padding: 0 60px;
@@ -644,89 +658,65 @@ footer{
     header {
         .container{
             padding: 20px 15px;
-        }
-        .header__left{
-            .phone-number{
-                display: none;
-            }
-        }
-    
+        }    
         .nav-toggle{
            display: none;
         }
-
         .header__nav{
             background-color:transparent;
             position: static;
             width:max-content;
             display: block;
-
+            padding: 0;
+            
             .nav__list{
                 display: flex;
                 li{
                     list-style: none;
                 }
+                .phone-number{
+                    align-items: center;
+                    a{
+                        font-weight: 400;
+                        font-size: $f-size-little;
+                    }
+                    .icon{
+                        width:15px;
+                        height: 20px;
+                        fill: $secondary-grey;
+                        margin-right: -10px;
+                        margin-top: 2px;
+                    }
+                    &:hover .icon{
+                        fill: $primary-pink;
+                    }
+                }
                 .drop-down{
                     margin-right: 20px;
+                    position: relative;
                     .arrow-icon{
                         margin-left: 0;
-                        &::after{
-                            content: '';
-                            width: 10px;
-                            height: 10px;
-                            display:block;
-                            border-left: 2px solid $secondary-grey;
-                            border-bottom: 2px solid  $secondary-grey;
-                            transform: rotate(-45deg);
-                            position: absolute;
-                            top: 10px;
-                            left: 125px;
-                        }
                     }
-                    .dropp-down__menu{
-                        width:220px;
+                    .drop-down__menu{
+                        width:250px;
                         position: absolute;
-                        top: 63px;
-                        left: 0;
-                        background-color:$primary-black;
+                        top: 40px;
+                        left: 15px;
+                        padding: 0;
+                        background-color:$primary-black; 
                         a{
                             margin-left: 0;
                         }
                     }
-
                 }
-                .icon--active .arrow-icon::after{
-                    transform: rotate(135deg);
-                    top: 15px;
-                }
-    
-                .dropp-down__menu{
-                    display: none;
-                }
-                a{
-                    display: block;
-                    text-transform: uppercase;
-                    font-size: $f-size-little;
-                    color:rgba($primary-white, .7);
-                    padding: 10px 15px;
-                    &:last-child{
-                        border-bottom:none;
-                    }
-                    &:hover{
-                        cursor: pointer;
-                        color:$primary-pink;
-                    }
-                    
-                }
-    
             }
            
         }
-        .dropp-down--active,
-        .header__nav--active{
-            display: block;
-        }
+
         
+    }
+    .logo{
+        width:118px;
     }
 
     .intro{
@@ -737,14 +727,17 @@ footer{
             }
         }
     }
-    
+    .phone-number--mobile{
+        display: none;
+    }
     .services{
         .container{
             display: flex;
             flex-wrap: wrap;
             padding: 0;
             .card{
-                width: 50%;
+                width: 48%;
+                margin: 1%;
                 &__subscribe {
                     font-size: 20px;
                     padding: 20px 18px;
@@ -753,7 +746,16 @@ footer{
             }
         }
     }
-
+    .block-title{
+        h2{
+            font-size: $f-size-big;
+        }
+        h3{
+            font-size:$f-size-medium;
+            margin-top: 25px;
+            line-height: 38px;
+        }
+    }
     .about {
         .about__content {
             display: flex;
@@ -787,6 +789,29 @@ footer{
                 }
             }
         } 
+    }
+
+    .description--offset{
+        margin-top: 150px;
+    }
+
+    .description{
+        h2{
+            font-size: 42px;
+            line-height: 63px;
+            margin-bottom: 20px;
+        }
+        p{
+            line-height: 24px;
+            margin-bottom: 30px;
+        }
+        ul{ 
+            li{
+                &::before{
+                    margin-top: 1px;
+                }  
+            }
+        }
     }
 
     footer{

@@ -21,7 +21,12 @@
                                 <img src="../img/logo.png" alt="компьютерная машинная вышивка в Украине">
                             </a>
                         </div>
-                        <a class="phone-number" href="tel:096-860-81-41">096-860-81-41</a>
+                        <a class="phone-number phone-number--mobile" href="tel:096-860-81-41" >
+                            <svg class="icon">
+                                <use xlink:href="../img/sprite.svg#call"></use>
+                            </svg>
+                            <p>096-860-81-41</p>
+                        </a>
                     </div>
                 
                     <div class="nav-toggle">
@@ -39,8 +44,12 @@
                                 <a href="about.html">О нас</a>
                             </li>
                             <li class="drop-down">
-                                <a class="arrow-icon">Наши услуги</a>
-                                <ul class='dropp-down__menu'>
+                                <a class="drop-down__trigger">Наши услуги
+                                    <span class="arrow-icon"></span>
+                                </a>
+                               
+                                
+                                <ul class='drop-down__menu'>
                                     <li>
                                         <a href="vyshivka-shevronow.html">Вышивка шевронов</a>
                                     </li>
@@ -60,6 +69,12 @@
                             </li>
                             <li>
                                 <a href="order-page.html">Контакты и Заказ</a>
+                            </li>
+                            <li class="phone-number phone-number--desktop" >
+                                <svg class="icon">
+                                    <use xlink:href="../img/sprite.svg#call"></use>
+                                </svg>
+                                <a  href="tel:096-860-81-41">096-860-81-41</a>
                             </li>
                         </ul>
                     </nav>
@@ -312,9 +327,11 @@
         <footer>
             <div class="container">
                 <div class="copiryght">
-                    <span>Piroll Design, Inc.</span>
-                    <p>© 2021 Piroll. All rights reserved.</p>
-                    <p>Created by <a href="">NzR</a></p>
+                    <div class="logo">
+                        <a href="../index.html">
+                            <img src="../img/logo.png" alt="компьютерная машинная вышивка в Украине">
+                        </a>
+                    </div>
                     <div class="contacts">
                         <a href="mailto:promoprint0077@gmail.com">promoprint0077@gmail.com</a>
                         <a href="tel:096-860-81-41">096-860-81-41</a>
@@ -362,7 +379,7 @@
     </a>
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
     <!-- slick -->
     <script src="../js/slick.min.js"></script>
     <!-- JS -->
